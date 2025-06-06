@@ -8,7 +8,7 @@ if "logged_in" not in st.session_state:
 if "nickname" not in st.session_state:
     st.session_state.nickname = None
 
-data = pd.read_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx')
+data = pd.read_excel('Employee Sample Data.xlsx')
 data_list = data.to_dict('records')
 
 def main():
@@ -37,7 +37,7 @@ def main():
                 st.session_state.nickname = None
 
 def check_login(email, password):
-    with open("D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/admins.txt", "r") as file:
+    with open("admins.txt", "r") as file:
         lines = file.readlines()
         for line in lines:
             stored_email, stored_password, stored_nickname = line.strip().split(":")

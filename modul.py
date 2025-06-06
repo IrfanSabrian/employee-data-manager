@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 from tabulate import tabulate
 
-data = pd.read_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx')
+data = pd.read_excel('Employee Sample Data.xlsx')
 data_list = data.to_dict('records')
 
 
@@ -201,7 +201,7 @@ def tambah_karyawan():
         data = pd.concat([data, df_baru], ignore_index=True)
 
         # Simpan DataFrame ke file Excel
-        data.to_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx', index=False)
+        data.to_excel('Employee Sample Data.xlsx', index=False)
 
         st.success("Data berhasil disimpan.")
 
@@ -271,7 +271,7 @@ def edit_karyawan():
                 data.loc[found_index[0]] = data_baru
 
                 # Simpan DataFrame ke file Excel
-                data.to_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx', index=False)
+                data.to_excel('Employee Sample Data.xlsx', index=False)
 
                 st.success("Perubahan berhasil disimpan.")
         else:
@@ -300,7 +300,7 @@ def resign_karyawan():
                 data.at[found_index[0], 'Exit Date'] = today_date
 
                 # Simpan DataFrame ke file Excel
-                data.to_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx', index=False)
+                data.to_excel('Employee Sample Data.xlsx', index=False)
 
                 st.success("Karyawan telah direseign dengan sukses. Exit Date telah diisi dengan tanggal saat ini.")
         else:
@@ -326,7 +326,7 @@ def hapus_karyawan():
                 data = data.drop(found_index)
 
                 # Simpan DataFrame ke file Excel tanpa baris yang dihapus
-                data.to_excel('D:/Kuliah/Semester 2/Struktur Data/Coding Python/RevisiFinal/Employee Sample Data.xlsx', index=False)
+                data.to_excel('Employee Sample Data.xlsx', index=False)
 
                 st.success("Data berhasil dihapus.")
         else:
